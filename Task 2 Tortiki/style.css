@@ -1,0 +1,243 @@
+
+#amb {
+  font-family:'Times New Roman', Times, serif;
+  color:red;
+  font-size: 40px;
+}
+
+.k-slider{
+    align-content: center;
+  
+    color:rgb(255, 255, 255);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.733);
+}
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgba(216, 18, 51, 0.5);
+}
+
+header{
+    text-align: center;
+    background-color: white;
+   
+}
+img{
+    object-fit:contain;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.img{
+    display: flex;
+    width: 60%;
+    height: 40%;
+}
+
+
+main{
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+    grid-gap: 10px;
+
+    padding: 10px;
+    background-color: #e9c19f;
+}
+
+input[type="range"]{
+    display:block;
+}
+input{
+    display: none;
+}
+.valuefilter{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    grid-gap: 10px;
+}
+.valuefilter > label{
+    font-size: larger;
+    background-color: rgb(247, 231, 234);
+    color: rgb(126, 95, 100);
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+}
+.valuefilter > label:hover{
+    font-weight: bold;
+    cursor: pointer;
+    transform: scale(1.020);
+    color:rgb(2, 1, 1);
+    
+}
+
+#keks:checked ~ .items >:not(.keks),
+#ruletics:checked ~ .items > :not(.ruletics),
+#cakekes:checked ~ .items > :not(.cakekes){
+    display: none;
+}
+#cookies:checked ~ .items > :not(.cookies),
+#muffins:checked ~ .items > :not(.muffin)
+{
+    display: none;
+}
+
+.items{
+    order: -1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-gap: 5px;
+    
+    font-size: 20px;
+    color: rgb(92, 63, 87);
+}
+
+.tile{
+    border-radius: 5px;
+    background-color: #ffffff;
+    transition: 0.4s;
+   
+    
+}
+
+.tile:hover{
+    transform: scale(0.95);
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.315);
+    border-radius: 10px;
+    
+}
+
+
+.Show{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    
+}
+
+.muffin .Show > span::before{
+    content: "Мафіни: ";
+    display: block;
+}
+.cakekes .Show > span::before{
+    content: "Тортики: ";
+    display: block;
+}
+.cookies .Show > span::before{
+    content: "Тістечка: ";
+    display: block;
+}
+.ruletics .Show > span::before{
+    content: "Рулетики: ";
+    display: block;
+}
+.keks .Show > span::before{
+    content: "Печиво: ";
+    display: block;
+}
+
+
+.muffin .Show > span::before,
+.cakekes .Show > span::before,
+.cookies .Show > span::before
+.ruletics .Show > span::before,
+.keks .Show > span::before{
+    opacity: 0.5;
+}
+
+.value{
+    position: relative;
+    border-top: 2px solid  rgb(85, 141, 226);
+    padding-left: 5px;
+}
+
+
+.inf{
+    display: inline;
+    color:rgb(255, 255, 255);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.733);
+}
+.year{
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.733);
+     float:right;
+     color: rgb(255, 255, 255);
+ }
+
+footer > a{
+    color: white;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.733);
+}
+
+
+
+@media (max-width: 800px){
+    .k-slider{
+        display: none;
+    }
+    main{
+        grid-template-columns: 100%;
+    }
+    .valuefilter{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .items{
+        order: 0;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .tile{
+        border-radius: 2px;
+    }
+    .value{
+        display: none;
+    }
+
+    .Show{
+        display: flex;
+        flex-flow: column;
+    }
+
+    .img{
+        width: 100%;
+    }
+
+    .muffin .Show > span::before,
+    .cakekes .Show > span::before,
+    .cookies .Show > span::before{
+        display: inline;
+    }
+
+  
+.inf{
+    display:block;
+}
+
+  
+}
+
+
+
+
+
+@media (max-width: 500px){
+    .k-slider{
+        display: none;
+    }
+    .valuefilter{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .Show > span{
+        display: none;
+    }
+    .items{
+        grid-template-columns: 1fr;
+    }
+
+    .year,a[target="_blank"],.inf{
+        display: block;
+    }
+    .year{
+        float:left;
+    }
+}
